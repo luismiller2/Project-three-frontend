@@ -35,8 +35,13 @@ const Home = () => {
   
         <body>
           <h1>Welcome to BetterMe</h1>
-          <p>Sign up or Log in</p>
-          <p>Begin the journey of bettering yourself daily today!</p>
+          <br></br>
+          <h5>Begin the journey of bettering yourself daily today!</h5>
+          <ul>
+              <li>Get daily workouts or create your own</li>
+              <li>Read the Bible daily and write down your takeaways</li>
+              <li>Get daily computer programming trivia and test your knowledge</li>
+          </ul>
         </body>
           <div class="footer-basic">
             <footer>

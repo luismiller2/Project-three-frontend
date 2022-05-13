@@ -3,27 +3,8 @@ import React from "react";
 const User = () => {
   return (
     <div>
-      <body>
-        <head>
-          <meta charset="utf-8" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
-          <title>Untitled</title>
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
-          />
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"
-          />
-          {/* <link rel="stylesheet" href="assets/css/style.css" /> */}
-        </head>
 
-        <h1>Users </h1>
-        <h3>List of users:</h3>
+        <h1>List of users:</h1>
         <ol>
           <li>Luis Miller</li>
           <li>John Appleseed</li>
@@ -69,7 +50,6 @@ const User = () => {
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-      </body>
     </div>
   );
 };

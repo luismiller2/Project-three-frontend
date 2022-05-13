@@ -1,33 +1,59 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Workout = () => {
+  const [workouts, setWorkouts] = React.useState([]);
+  const [query, setQuery] = React.useState("");
+
+  React.useEffect(() => {
+    getWorkout();
+  }, []);
+
+  React.useEffect(() => {
+    axios
+      .get(
+        `https://wger.de/api/v2/exercise/?format=json&language=2/search?q=${query}`
+      )
+      .then((results) => console.log(results.data))
+      .catch((err) => console.log(err.message));
+  }, [query]);
+
+  let getWorkout = () => {
+    axios
+      .get("https://wger.de/api/v2/exercise/?format=json&language=2")
+      .then((results) => setWorkouts(results.data.results))
+      .catch((err) => console.log(err.message));
+  };
+
+  let handleChange = (e) => {
+    setQuery(e.target.value);
+  };
+
   return (
     <div>
-      <body>
-        <head>
-          <meta charset="utf-8" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
-          <title>Untitled</title>
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
-          />
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"
-          />
-          {/* <link rel="stylesheet" href="assets/css/style.css" /> */}
-        </head>
-
         <h1>Get a workout</h1>
-        <ul>
-          <h2>Strength</h2>
-          <h2>Cardio</h2>
-          <h2>Mobility</h2>
-        </ul>
+        <form>
+          <input
+            onChange={handleChange}
+            type="text"
+            name="search"
+            value={query}
+          ></input>
+        </form>
+
+        {workouts.map(function (workout) {
+          return (
+            <div>
+              <Link to={`/${workout._id}`}>
+                <h3>{workout.name}</h3>
+              </Link>
+              <p>{workout.type}</p>
+              <p>{workout.duration}</p>
+              <p>{workout.location}</p>
+            </div>
+          );
+        })};
 
         <div class="footer-basic">
           <footer>
@@ -67,9 +93,9 @@ const Workout = () => {
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-      </body>
     </div>
   );
+  
 };
 
 export default Workout;

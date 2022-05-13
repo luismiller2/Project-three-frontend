@@ -13,16 +13,15 @@ import NotFound from './pages/NotFound'
 function App() {
   return (
     <div>
-    <body>
     <header>
       <nav>
         <Link to="/">Home &nbsp;</Link>
-        <Link to="/signup">Signup &nbsp;</Link>
-        <Link to="/login">Login &nbsp;</Link>
-        <Link to="/users">Users &nbsp;</Link>
         <Link to="/workouts">Workouts &nbsp;</Link>
         <Link to="/spiritual">Bible &nbsp;</Link>
         <Link to="/mentalExercise">Mental Exercises &nbsp;</Link>
+        <Link to="/signup">Signup &nbsp;</Link>
+        <Link to="/login">Login &nbsp;</Link>
+        <Link to="/users">Users &nbsp;</Link>
       </nav>
     </header>
 
@@ -36,8 +35,6 @@ function App() {
       <Route path="/spiritual" element={<Spiritual />} />
       <Route path="/mentalExercise" element={<MentalExercise />} />
     </Routes>
-
-    </body>
     </div>
   );
 }
