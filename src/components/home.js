@@ -1,5 +1,4 @@
 import React from "react";
-import "../App.css"
 
 const Home = () => {
   return (
@@ -22,8 +21,8 @@ const Home = () => {
 
       <body>
         <h1>Welcome to BetterMe</h1>
-        <h3>First Time?</h3>
         <p>Sign up or Log in</p>
+        <p>Begin the journey of bettering yourself daily today!</p>
       </body>
         <div class="footer-basic">
           <footer>
