@@ -1,55 +1,43 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import {get} from "../authService/authService"
+import Footer from "./Footer";
+import Quiz from "./Quiz";
 
 const MentalExercise = () => {
+  const [quiz, setQuiz] = React.useState([])
+
+  // React.useEffect(() => {
+  //   getMentalExercise();
+  // }, []);
+
+  React.useEffect(() => {
+    get('/mentalExercise')
+      .then((results) =>  setQuiz(results.data.results))
+      .catch((err) => console.log(err.message));
+  }, []);
+
+  let getMentalExercise = () => {
+    axios
+      .get("mentalExercise/all-mental-exercises")
+      .then((results) => setQuiz(results.data.results))
+      .catch((err) => console.log(err.message));
+  };
+
   return (
     <div>
+    <br></br>
+    <h1>Computer Programming Trivia</h1>
+    <hr></hr>
+        {quiz.length && quiz.map(function (trivia) {
+          return (
+            <Quiz trivia = {trivia}/>
+        );
+        })}
 
-        <h1>Mental Exercises</h1>
-        <h3>Computer Programming Trivia</h3>
-        <ul>
-          <li>Multiple Choice</li>
-          <li>True/ False</li>
-        </ul>
-
-        <div class="footer-basic">
-          <footer>
-            <div class="social">
-              <a href="#">
-                <i class="icon ion-social-instagram"></i>
-              </a>
-              <a href="#">
-                <i class="icon ion-social-snapchat"></i>
-              </a>
-              <a href="#">
-                <i class="icon ion-social-twitter"></i>
-              </a>
-              <a href="#">
-                <i class="icon ion-social-facebook"></i>
-              </a>
-            </div>
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="#">Home</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Services</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">About</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Terms</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Privacy Policy</a>
-              </li>
-            </ul>
-            <p class="copyright">BetterMe © 2022</p>
-          </footer>
-        </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-    </div>
+        {/* <div><Footer /></div> */}
+       </div>
   );
 };
 

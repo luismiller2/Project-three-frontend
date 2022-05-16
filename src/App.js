@@ -9,31 +9,25 @@ import Workout from './components/workouts'
 import Spiritual from './components/spiritual'
 import MentalExercise from './components/mentalExercise'
 import NotFound from './pages/NotFound'
+import Navbar from './components/Navbar';
+// import WorkoutImage from './pages/WorkoutImage';
+import ExerciseDetails from './components/exerciseDetails';
 
 function App() {
   return (
     <div>
-    <header>
-      <nav>
-        <Link to="/">Home &nbsp;</Link>
-        <Link to="/workouts">Workouts &nbsp;</Link>
-        <Link to="/spiritual">Bible &nbsp;</Link>
-        <Link to="/mentalExercise">Mental Exercises &nbsp;</Link>
-        <Link to="/signup">Signup &nbsp;</Link>
-        <Link to="/login">Login &nbsp;</Link>
-        <Link to="/users">Users &nbsp;</Link>
-      </nav>
-    </header>
+    <Navbar />
 
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/*" element={<NotFound />} />
       <Route path="/users" element={<User />} />
       <Route path="/workouts" element={<Workout />} />
+      <Route path="/workouts/:id" element={<ExerciseDetails />} />
       <Route path="/spiritual" element={<Spiritual />} />
       <Route path="/mentalExercise" element={<MentalExercise />} />
+      <Route path="/*" element={<NotFound />} />
     </Routes>
     </div>
   );
