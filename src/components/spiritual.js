@@ -32,7 +32,7 @@ const Spiritual = () => {
       .catch((err) => console.log(err.message));
   };
 
-  const createBible = (e) => {
+  const searchBible = (e) => {
     e.preventDefault();
     post('/spiritual',{
       testament: testament,
@@ -50,12 +50,17 @@ const Spiritual = () => {
     })
   }
 
+  // let handleChange = (e) => {
+  //   setQuery(e.target.value);
+  // };
+
 
   return (
     <div>
+        <br></br>
         <h1>Read the Bible</h1>
         <h3>Search for a passage</h3>
-        <form onSubmit={createBible}>
+        <form onSubmit={searchBible}>
           <div>
           <label>Book &nbsp;</label>
           <input value={book} onChange={(e) =>setBook(e.target.value)}/>
@@ -72,7 +77,7 @@ const Spiritual = () => {
           <label>Verse To &nbsp;</label>
           <input value={verseTo} onChange={(e) =>setVerseTo(e.target.value)}/>
           </div>
-          <button type="submit">Create </button>
+          <button type="submit">Search Bible </button>
         </form>
        
         <div>
@@ -81,6 +86,15 @@ const Spiritual = () => {
           <p>Verse From: {bibleSearch.VerseFrom}</p>
           <p>Verse To: {bibleSearch.VerseTo}</p>
           <p>{bibleSearch.Output}</p>
+          {/* <form>
+          <input
+            onChange={handleChange}
+            type="text"
+            name="search"
+            value={query}
+          ></input>
+        </form> */}
+          <button>Add to My Profile</button>
         </div>
         {spirituals.map(function (spiritual) {
           return (

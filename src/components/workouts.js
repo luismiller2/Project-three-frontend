@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import ExerciseDetails from "./exerciseDetails";
 import Footer from "./Footer";
 
 const Workout = () => {
@@ -32,23 +31,25 @@ const Workout = () => {
 
   return (
     <div>
+        <br></br>
         <h1>Get a workout</h1>
-        <form>
+        {/* <form>
           <input
             onChange={handleChange}
             type="text"
             name="search"
             value={query}
           ></input>
-        </form>
+        </form> */}
 
         {workouts.map(function (workout) {
           return (
             <div>
+            <ul>
               <Link to={`/workouts/${workout.id}`}>
-                <h3>{workout.name}</h3>
+               <li> <h4>{workout.name}</h4> </li>
               </Link>
-             <p>{workout.description.replace(/<[^>]*>/g, '')}</p>
+            </ul>
             </div>
           );
         })}

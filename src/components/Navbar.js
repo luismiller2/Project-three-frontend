@@ -24,6 +24,7 @@ const Navbar = () => {
         <Link to="/spiritual">Bible &nbsp;</Link>
         <Link to="/workouts">Workouts &nbsp;</Link>
         <Link to="/mentalExercise">Computer Trivia &nbsp;</Link>
+        <Link to="/user-data">User Profile &nbsp;</Link>
         <button onClick={logout}>Log Out</button>
         </nav>
         ) : (

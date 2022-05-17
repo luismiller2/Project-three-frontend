@@ -10,8 +10,8 @@ const Quiz = (props) => {
 
 
 function guess(answer) {
-    console.log(answer)
-    console.log(correct_answer)
+    // console.log(answer)
+    // console.log(correct_answer)
 
     if (answer === correct_answer) {
         setDisplayMessage("Correct!")
@@ -20,8 +20,18 @@ function guess(answer) {
     }
 }
 
+const handleAnswerButtonClick = (answer) => {
+    if (answer === correct_answer) {
+        setDisplayMessage("Correct!")
+    } else {
+        setDisplayMessage("Incorrect Answer!")
+    }
+}
+
+
 return (
     <div>
+
           <p>{question}</p>
          
           {answers.map(function (answer) {

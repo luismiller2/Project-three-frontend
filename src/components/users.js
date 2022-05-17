@@ -1,18 +1,37 @@
 import React from "react";
+import {get} from "../authService/authService"
 import Footer from "./Footer";
 
 const User = () => {
+
+  const [allUsers, setAllUsers] = React.useState([])
+
+
+  React.useEffect(() => {
+    get('/users/all-users')
+      .then((results) =>  setAllUsers(results.data))
+      .catch((err) => console.log(err.message));
+  }, []);
+
+  
+
   return (
     <div>
         <br></br>
         <h1>List of users:</h1>
-        <ol>
-          <li>Luis Miller</li>
-          <li>John Appleseed</li>
-          <li>Diego Miller</li>
-        </ol>
+      {allUsers.map(function(user) {
+        return (
+          <div>
+          <ul>
+           <li> <h4>{user.username}</h4> </li>
+           <li> <p>{user.email}</p> </li>
+           
+          </ul>
+          </div>
+        )
+      })}
 
-      <div><Footer /></div>
+      {/* <div><Footer /></div> */}
       </div>
   );
 };

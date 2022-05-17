@@ -12,6 +12,8 @@ import NotFound from './pages/NotFound'
 import Navbar from './components/Navbar';
 // import WorkoutImage from './pages/WorkoutImage';
 import ExerciseDetails from './components/exerciseDetails';
+import Profile from './pages/Profile';
+import EditProfile from './pages/EditProfile';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
       <Route path="/workouts/:id" element={<ExerciseDetails />} />
       <Route path="/spiritual" element={<Spiritual />} />
       <Route path="/mentalExercise" element={<MentalExercise />} />
+      <Route path="/user-data" element={<Profile />} />
+      <Route path="/user-data/edit" element={<EditProfile />} />
       <Route path="/*" element={<NotFound />} />
     </Routes>
     </div>

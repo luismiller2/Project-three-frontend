@@ -21,6 +21,7 @@ const ExerciseDetails = () => {
           .catch((err) => console.log(err.message));
       }, []);
       console.log(exercise)
+      
     //   let getExercise = () => {
     //     axios
     //       .get("workout/create")
@@ -30,10 +31,12 @@ const ExerciseDetails = () => {
       
     return(
         <div>
+        <br></br>
             <h1>Workout Details</h1>
-            <p><h3>{exercise.name}</h3></p>
+            <p><h2>{exercise.name}</h2></p>
             <p>Muscle Group: {exercise.category?.name}</p>
-            <p>{exercise.description?.replace(/<[^>]*>/g, '')}</p>
+            <p>Description: {exercise.description?.replace(/<[^>]*>/g, '')}</p>
+            <button>Add to My Workouts</button>
         </div>
     )
 }
