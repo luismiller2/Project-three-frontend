@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { get, post } from "../authService/authService";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const Profile = () => {
   const [user, setUser] = React.useState({});
@@ -10,12 +11,31 @@ const Profile = () => {
   const navigate = useNavigate();
 
   React.useEffect(() => {
+    getUserData();
+  }, []);
+
+  function getUserData() {
+      console.log("GET USER DATA")
     get("/users/user-data")
       .then((results) => setUser(results.data))
       .catch((err) => console.log(err.message));
     getTakeaways();
     getWorkouts();
-  }, []);
+  }
+
+  function getTakeaways() {
+      console.log("GET TAKEAWAYS")
+    get("/spiritual/my-spirituals")
+      .then((results) => setSpirituals(results.data))
+      .catch((err) => console.log(err.message));
+  }
+
+  function getWorkouts() {
+      console.log("GET WORKOUT")
+    get("/workout/my-workouts")
+      .then((results) => setWorkouts(results.data))
+      .catch((err) => console.log(err.message));
+  }
 
   function deleteProfile() {
     post("/users/delete")
@@ -29,16 +49,29 @@ const Profile = () => {
       });
   }
 
-  function getTakeaways() {
-    get("/spiritual/my-spirituals")
-      .then((results) => setSpirituals(results.data))
-      .catch((err) => console.log(err.message));
+  function deleteWorkout(id) {
+    console.log(id);
+    post(`/workout/${id}/delete`)
+      .then((results) => {
+        getUserData();
+        console.log("results.data.token", results.data.token);
+      })
+      .catch((err) => {
+        console.log("Something went wrong", err.message);
+      });
   }
 
-  function getWorkouts() {
-    get("/workout/my-workouts")
-      .then((results) => setWorkouts(results.data))
-      .catch((err) => console.log(err.message));
+  function deleteTakeaway(takeawayID) {
+    console.log(takeawayID);
+    console.log("takawayID", `/spiritual/${takeawayID}/delete`);
+    post('/spiritual/'+takeawayID+'/delete')
+      .then((results) => {
+          console.log("results.data.token", results.data.token);
+          getUserData();
+      })
+      .catch((err) => {
+        console.log("Something went wrong", err.message);
+      });
   }
 
   console.log(spirituals);
@@ -47,14 +80,14 @@ const Profile = () => {
     <div>
       <br></br>
       <h2>User Profile</h2>
+      <hr></hr>
       <p>Username: {user.username}</p>
       <p>Email: {user.email} </p>
 
-      <h4>
         <Link to="/user-data/edit">
-        <button> Edit </button>
+          <button> Edit </button>
         </Link>
-      </h4>
+    
       <button onClick={deleteProfile}>Delete Profile </button>
       <hr></hr>
 
@@ -64,12 +97,21 @@ const Profile = () => {
         return (
           <div>
             <p>Name: {workout.name}</p>
-            <p>Category: {workout.category?.name}</p>
-            <p>Description: {workout.description}</p>
+            <p>Category: {workout.category}</p>
+            <p>Description: {workout.description?.replace(/<[^>]*>/g, "")}</p>
+            <p>Sets: {workout.sets}</p>
+            <Link to={`/workout/${workout._id}/edit`}>
+          <button> Edit </button>
+            </Link>
+            <button onClick={() => deleteWorkout(workout._id)}>
+              Delete Workout{" "}
+            </button>
+            <hr></hr>
           </div>
         );
       })}
 
+      <br></br>
       <h3>Bible Takeaways: </h3>
       {spirituals.map(function (spiritual) {
         return (
@@ -79,10 +121,17 @@ const Profile = () => {
             <p>Verse From: {spiritual.verseFrom}</p>
             <p>Verse To: {spiritual.verseTo}</p>
             <p>Takeaway: {spiritual.takeaway}</p>
+            <Link to={`/spiritual/${spiritual._id}/edit`}>
+          <button> Edit </button>
+            </Link>
+            <button onClick={() => deleteTakeaway(spiritual._id)}>
+              Delete Takeaway{" "}
+            </button>
             <hr></hr>
           </div>
         );
       })}
+      <br></br>
       <h3>Quiz Results:</h3>
     </div>
   );

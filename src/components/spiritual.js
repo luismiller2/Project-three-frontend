@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { get, post } from "../authService/authService";
+import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 
 const Spiritual = () => {
@@ -15,6 +16,7 @@ const Spiritual = () => {
   const [bibleSearch, setBibleSearch] = React.useState({});
   const [query, setQuery] = React.useState("");
   const [userTakeaway, setUserTakeaway] = React.useState("");
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     getSpiritual();
@@ -62,6 +64,7 @@ const Spiritual = () => {
       .then((results) => {
         console.log("Results", results.data);
         setBibleSearch(results.data);
+        navigate("/user-data")
       })
       .catch((err) => {
         console.log("Something went wrong", err.message);
@@ -117,18 +120,6 @@ const Spiritual = () => {
 
         <button onClick={addToProfile}>Add to My Profile</button>
       </div>
-      {/* {spirituals.map(function (spiritual) {
-          return (
-            <div>
-              <Link to={`/${spiritual._id}`}>
-                <h3>{spiritual.book}</h3>
-              </Link>
-              <p>{spiritual.chapter}</p>
-              <p>{spiritual.verses}</p>
-              <p>{spiritual.takeaway}</p>
-            </div>
-          );
-        })} */}
 
       {/* <div><Footer /></div> */}
     </div>

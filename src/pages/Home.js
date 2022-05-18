@@ -20,7 +20,7 @@ const Home = () => {
       <div>
       <br></br>
           <h1>Welcome to BetterMe</h1>
-          <br></br>
+          <hr></hr>
           <h5>Begin the journey of bettering yourself daily today!</h5>
           <ul>
               <li>Get daily workouts or create your own</li>

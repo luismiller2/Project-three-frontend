@@ -36,7 +36,7 @@ return (
          
           {answers.map(function (answer) {
               return (
-                  <div><button onClick={() =>guess(answer)}>{answer}</button></div>
+                  <div><button onClick={() =>guess(answer)}>{answer.replace(/&quot;/g,'"').replace(/&#039;/g,'').replace(/&gt;/g, ">").replace(/&lt;/g, "<")}</button></div>
               )
           })}
           <p>{displayMessage}</p>

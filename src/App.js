@@ -14,6 +14,8 @@ import Navbar from './components/Navbar';
 import ExerciseDetails from './components/exerciseDetails';
 import Profile from './pages/Profile';
 import EditProfile from './pages/EditProfile';
+import EditWorkout from './pages/EditWorkout';
+import EditTakeaway from './pages/EditTakeaway';
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
       <Route path="/mentalExercise" element={<MentalExercise />} />
       <Route path="/user-data" element={<Profile />} />
       <Route path="/user-data/edit" element={<EditProfile />} />
+      <Route path="/workout/:id/edit" element={<EditWorkout />} />
+      <Route path="/spiritual/:id/edit" element={<EditTakeaway />} />
       <Route path="/*" element={<NotFound />} />
     </Routes>
     </div>
