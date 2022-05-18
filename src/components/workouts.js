@@ -33,6 +33,7 @@ const Workout = () => {
     <div>
         <br></br>
         <h1>Get a workout</h1>
+        <hr></hr>
         {/* <form>
           <input
             onChange={handleChange}

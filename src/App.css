@@ -20,6 +20,10 @@ a:hover {
   background-color: rgb(72, 74, 197);
 }
 
+hr {
+  border: 1px solid rgb(255, 255, 255);
+}
+
 .footer-basic {
   padding:40px 0;
   background-color:rgb(72, 74, 197);

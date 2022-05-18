@@ -8,7 +8,7 @@ const Navbar = () => {
 
 
   let token = localStorage.getItem("authToken")
-  console.log("TOKEN", token);
+  // console.log("TOKEN", token);
 
   function logout(){
     localStorage.clear()

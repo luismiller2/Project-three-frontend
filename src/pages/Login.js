@@ -20,7 +20,7 @@ const Login = () => {
     })
       .then((results) => {
         console.log("Results", results.data);
-        localStorage.setItem("authToken", results.data);
+        localStorage.setItem("authToken", results.data.token);
         navigate("/");
       })
       .catch((err) => {

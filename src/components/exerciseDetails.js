@@ -1,7 +1,6 @@
 import React from "react";
-import { get } from "../authService/authService";
+import { get, post } from "../authService/authService";
 import { useParams } from "react-router-dom";
-import Workout from "./workouts";
 
 const ExerciseDetails = () => {
 
@@ -28,6 +27,22 @@ const ExerciseDetails = () => {
     //       .then((results) => setExercise(results.data.results))
     //       .catch((err) => console.log(err.message));
     //   };
+
+    function addToProfile() {
+        post("/workout/create", {
+          name: singleExercise.name,
+          category: singleExercise.category?.name,
+          description: singleExercise.description,
+        //   creatorId: singleExercise.user._id
+        })
+          .then((results) => {
+            console.log("Results", results.data);
+            setSingleExercise(results.data);
+          })
+          .catch((err) => {
+            console.log("Something went wrong", err.message);
+          });
+      }
       
     return(
         <div>
@@ -36,7 +51,7 @@ const ExerciseDetails = () => {
             <p><h2>{exercise.name}</h2></p>
             <p>Muscle Group: {exercise.category?.name}</p>
             <p>Description: {exercise.description?.replace(/<[^>]*>/g, '')}</p>
-            <button>Add to My Workouts</button>
+            <button onClick={addToProfile}>Add to My Workouts</button>
         </div>
     )
 }

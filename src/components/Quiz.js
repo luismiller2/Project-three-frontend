@@ -32,7 +32,7 @@ const handleAnswerButtonClick = (answer) => {
 return (
     <div>
 
-          <p>{question}</p>
+          <p>{question.replace(/&quot;/g,'"').replace(/&#039;/g,'').replace(/&gt;/g, ">").replace(/&lt;/g, "<")}</p>
          
           {answers.map(function (answer) {
               return (
