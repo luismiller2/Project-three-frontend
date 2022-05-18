@@ -82,22 +82,22 @@ const Spiritual = () => {
       <hr></hr>
       <form onSubmit={searchBible}>
         <div>
-          <label>Book &nbsp;</label>
+          <label>Book: &nbsp;</label>
           <input value={book} onChange={(e) => setBook(e.target.value)} />
         </div>
         <div>
-          <label>Chapter &nbsp;</label>
+          <label>Chapter: &nbsp;</label>
           <input value={chapter} onChange={(e) => setChapter(e.target.value)} />
         </div>
         <div>
-          <label>Verse From &nbsp;</label>
+          <label>Verse From: &nbsp;</label>
           <input
             value={verseFrom}
             onChange={(e) => setVerseFrom(e.target.value)}
           />
         </div>
         <div>
-          <label>Verse To &nbsp;</label>
+          <label>Verse To: &nbsp;</label>
           <input value={verseTo} onChange={(e) => setVerseTo(e.target.value)} />
         </div>
         <button type="submit">Search Bible </button>
@@ -121,7 +121,8 @@ const Spiritual = () => {
         <button onClick={addToProfile}>Add to My Profile</button>
       </div>
 
-      {/* <div><Footer /></div> */}
+      <br></br>
+      <div><Footer /></div>
     </div>
   );
 };

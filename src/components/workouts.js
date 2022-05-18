@@ -12,29 +12,17 @@ const Workout = () => {
   const [category, setCategory] = React.useState([]);
   const [description, setDescription] = React.useState([]);
   const [sets, setSets] = React.useState([]);
-  const [query, setQuery] = React.useState("");
   const navigate = useNavigate();
 
   React.useEffect(() => {
     getWorkout();
   }, []);
 
-  React.useEffect(() => {
-    axios
-      .get(`https://wger.de/api/v2/exercise/?format=json&language=2`)
-      .then((results) => console.log(results.data.results))
-      .catch((err) => console.log(err.message));
-  }, [query]);
-
   let getWorkout = () => {
     axios
       .get("https://wger.de/api/v2/exercise/?format=json&language=2&limit=250")
       .then((results) => setWorkouts(results.data.results))
       .catch((err) => console.log(err.message));
-  };
-
-  let handleChange = (e) => {
-    setQuery(e.target.value);
   };
 
   function customWorkout() {
@@ -61,7 +49,7 @@ const Workout = () => {
         <div>
             <label>Name: </label>
             <input value={name} onChange={(e) => setName(e.target.value)}/>
-            <label>Category: </label>
+            <label>Muscle Group: </label>
             <input value={category} onChange={(e) => setCategory(e.target.value)}/>
             <label>Description: </label>
             <input value={description} onChange={(e) => setDescription(e.target.value)}/>
@@ -72,14 +60,6 @@ const Workout = () => {
         <br></br>
         <h1>Get a workout</h1>
         <hr></hr>
-        {/* <form>
-          <input
-            onChange={handleChange}
-            type="text"
-            name="search"
-            value={query}
-          ></input>
-        </form> */}
 
         {workouts.map(function (workout) {
           return (
@@ -92,7 +72,8 @@ const Workout = () => {
             </div>
           );
         })}
-        {/* <div><Footer /></div> */}
+        <br></br>
+        <div><Footer /></div>
         </div>
   );
   

@@ -47,7 +47,7 @@ const Login = () => {
 
         <button type="submit">Log In</button>
       </form>
-      <div><Footer /> </div>
+      {/* <div><Footer /> </div> */}
     </div>
   );
 };

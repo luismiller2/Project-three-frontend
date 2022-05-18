@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { get, post } from "../authService/authService";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const Profile = () => {
   const [user, setUser] = React.useState({});
@@ -97,7 +98,7 @@ const Profile = () => {
         return (
           <div>
             <p>Name: {workout.name}</p>
-            <p>Category: {workout.category}</p>
+            <p>Muscle Group: {workout.category}</p>
             <p>Description: {workout.description?.replace(/<[^>]*>/g, "")}</p>
             <p>Sets: {workout.sets}</p>
             <Link to={`/workout/${workout._id}/edit`}>
@@ -133,6 +134,9 @@ const Profile = () => {
       })}
       <br></br>
       <h3>Quiz Results:</h3>
+
+      <br></br>
+      <div><Footer /></div>
     </div>
   );
 };

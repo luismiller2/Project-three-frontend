@@ -24,16 +24,16 @@ const Footer = () => {
               <a href="#">Home</a>
             </li>
             <li class="list-inline-item">
-              <a href="#">Services</a>
+              <a href="#">Bible</a>
             </li>
             <li class="list-inline-item">
-              <a href="#">About</a>
+              <a href="#">Workouts</a>
             </li>
             <li class="list-inline-item">
-              <a href="#">Terms</a>
+              <a href="#">Computer Trivia</a>
             </li>
             <li class="list-inline-item">
-              <a href="#">Privacy Policy</a>
+              <a href="#">User Profile</a>
             </li>
           </ul>
           <p class="copyright">BetterMe © 2022</p>

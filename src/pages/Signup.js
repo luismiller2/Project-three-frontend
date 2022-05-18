@@ -47,7 +47,7 @@ const Signup = () => {
 
         <button type="submit">Create User</button>
       </form>
-      <div><Footer /> </div>
+      {/* <div><Footer /> </div> */}
     </div>
   );
 };

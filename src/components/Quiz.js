@@ -8,13 +8,13 @@ const Quiz = (props) => {
     const [correct_answer, setCorrectAnswer] = React.useState(props.trivia.correct_answer)
     const [answers, setAnswers] = React.useState([...props.trivia.incorrect_answers, props.trivia.correct_answer].sort(() => Math.random() - 0.5))
 
-
 function guess(answer) {
     // console.log(answer)
     // console.log(correct_answer)
 
     if (answer === correct_answer) {
         setDisplayMessage("Correct!")
+        // correct_answer.setBackgroundColor(Color.GREEN);
     } else {
         setDisplayMessage("Incorrect Answer!")
     }

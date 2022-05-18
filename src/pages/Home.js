@@ -21,13 +21,20 @@ const Home = () => {
       <br></br>
           <h1>Welcome to BetterMe</h1>
           <hr></hr>
-          <h5>Begin the journey of bettering yourself daily today!</h5>
+          <h3>Begin the journey of bettering yourself daily today!</h3>
           <ul>
-              <li>Get daily workouts or create your own</li>
               <li>Read the Bible daily and write down your takeaways</li>
+              <li>Get daily workouts or create your own</li>
               <li>Get daily computer programming trivia and test your knowledge</li>
           </ul>
+          <div>
+          <br></br>
+          <h4>Hear Steve Job's take on Continuous Improvement below:</h4>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/Wc6bI16xuko" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <br></br>
+          </div>
 
+        <br></br>
         <div><Footer /></div>
       </div>
     );
