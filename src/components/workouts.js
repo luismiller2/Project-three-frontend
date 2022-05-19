@@ -58,6 +58,7 @@ const Workout = () => {
             <button onClick={customWorkout}>Create Workout</button>
         </div>
         <br></br>
+    <div>
         <h1>Get a workout</h1>
         <hr></hr>
 
@@ -72,6 +73,8 @@ const Workout = () => {
             </div>
           );
         })}
+
+        </div>
         <br></br>
         <div><Footer /></div>
         </div>

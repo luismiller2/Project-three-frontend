@@ -80,8 +80,9 @@ const Profile = () => {
   return (
     <div>
       <br></br>
-      <h2>User Profile</h2>
+      <h1>User Profile</h1>
       <hr></hr>
+      <div className="userProfile">
       <p>Username: {user.username}</p>
       <p>Email: {user.email} </p>
 
@@ -91,8 +92,10 @@ const Profile = () => {
     
       <button onClick={deleteProfile}>Delete Profile </button>
       <hr></hr>
+      </div>
 
       <br></br>
+      <div className="myWorkoutsSection">
       <h3>My Workouts: </h3>
       {workouts.map(function (workout) {
         return (
@@ -111,8 +114,10 @@ const Profile = () => {
           </div>
         );
       })}
+          </div>
 
       <br></br>
+      <div className="myTakeawaySection">
       <h3>Bible Takeaways: </h3>
       {spirituals.map(function (spiritual) {
         return (
@@ -132,8 +137,9 @@ const Profile = () => {
           </div>
         );
       })}
+      </div>
       <br></br>
-      <h3>Quiz Results:</h3>
+      {/* <h3>Quiz Results:</h3> */}
 
       <br></br>
       <div><Footer /></div>

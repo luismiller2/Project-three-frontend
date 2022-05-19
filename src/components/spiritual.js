@@ -4,6 +4,21 @@ import axios from "axios";
 import { get, post } from "../authService/authService";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
+import Modal from "./Modal";
+import styles from "../Modal.css";
+import { useState } from "react";
+
+function Popup() {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <main>
+      <button className={styles.primaryBtn} onClick={() => setIsOpen(true)}>
+        Search Bible
+      </button>
+      {isOpen && <Modal setIsOpen={setIsOpen} />}
+    </main>
+  );
+};
 
 const Spiritual = () => {
   const [spirituals, setSpirituals] = React.useState([]);
@@ -99,11 +114,13 @@ const Spiritual = () => {
         <div>
           <label>Verse To: &nbsp;</label>
           <input value={verseTo} onChange={(e) => setVerseTo(e.target.value)} />
-        </div>
         <button type="submit">Search Bible </button>
+        </div>
       </form>
+      {/* <Popup /> */}
+
       <hr></hr>
-      <div>
+      <div className = "bibleOutput">
         <p>Book: {bibleSearch.Book}</p>
         <p>Chapter: {bibleSearch.Chapter}</p>
         <p>Verse From: {bibleSearch.VerseFrom}</p>
