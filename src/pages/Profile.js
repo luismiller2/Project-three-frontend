@@ -95,11 +95,12 @@ const Profile = () => {
       </div>
 
       <br></br>
-      <div className="myWorkoutsSection">
-      <h3>My Workouts: </h3>
+      <h2>{user.username}'s Workouts: </h2>
+      <div className="columnatedW">
       {workouts.map(function (workout) {
         return (
-          <div>
+          <div class="direction">
+          {/* <div class="columnW"><div class="cardW"> */}
             <p>Name: {workout.name}</p>
             <p>Muscle Group: {workout.category}</p>
             <p>Description: {workout.description?.replace(/<[^>]*>/g, "")}</p>
@@ -117,11 +118,12 @@ const Profile = () => {
           </div>
 
       <br></br>
-      <div className="myTakeawaySection">
-      <h3>Bible Takeaways: </h3>
+      <h2>{user.username}'s Bible Takeaways: </h2>
+      <div className="columnatedT">
       {spirituals.map(function (spiritual) {
         return (
-          <div>
+          <div class="direction">
+          {/* <div class="columnT"><div class="cardT"> */}
             <p>Book: {spiritual.book}</p>
             <p>Chapter: {spiritual.chapter}</p>
             <p>Verse From: {spiritual.verseFrom}</p>
@@ -134,6 +136,7 @@ const Profile = () => {
               Delete Takeaway{" "}
             </button>
             <hr></hr>
+            {/* </div> */}
           </div>
         );
       })}

@@ -45,19 +45,21 @@ const Workout = () => {
   return (
     <div>
         <br></br>
+        <div class="createWorkoutSection">
         <h1>Create your own</h1>
         <div>
-            <label>Name: </label>
+            <label>Name: &nbsp; </label>
             <input value={name} onChange={(e) => setName(e.target.value)}/>
-            <label>Muscle Group: </label>
+            <label>Muscle Group: &nbsp; </label>
             <input value={category} onChange={(e) => setCategory(e.target.value)}/>
-            <label>Description: </label>
+            <label>Description: &nbsp; </label>
             <input value={description} onChange={(e) => setDescription(e.target.value)}/>
-            <label>Sets: </label>
+            <label>Sets: &nbsp; </label>
             <input value={sets} onChange={(e) => setSets(e.target.value)}/>
             <button onClick={customWorkout}>Create Workout</button>
         </div>
         <br></br>
+        </div>
     <div>
         <h1>Get a workout</h1>
         <hr></hr>

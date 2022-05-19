@@ -21,20 +21,24 @@ const Home = () => {
       <br></br>
       <h1>Welcome to BetterMe</h1>
       <hr></hr>
-      <div className="intro">
+      <div class="row">
       <div className= "introSectionHeader">
-      <h3>Begin the journey of bettering yourself daily today!</h3>
+      <h2>Begin the journey of bettering yourself daily today!</h2>
       </div>
       <div className="introSection">
-      <ul>
-        <li>Read the Bible daily and write down your takeaways</li>
-        <li>Get daily workouts or create your own</li>
-        <li>Get daily computer programming trivia and test your knowledge</li>
-      </ul>
+      <br></br>
+      <div>
+        {/* <div class="column"><div class="card"><p>Read the Bible daily and write down your takeaways</p></div></div> */}
+        <div class="column"><div class="card"><p>READ THE BIBLE DAILY AND WRITE DOWN YOUR TAKEAWAYS</p><img src="https://res.cloudinary.com/luismiller/image/upload/v1652996599/bible_pic_koenas.png" width="100" height="100"></img></div></div>
+        {/* <div class="column"><div class="card"><p>Get daily workouts or create your own</p></div></div> */}
+        <div class="column"><div class="card"><p>GET DAILY WORKOUTS OR CREATE YOUR OWN</p><img src="https://res.cloudinary.com/luismiller/image/upload/v1652996599/workout_pic_xft7fv.png" width="100" height="100"></img></div></div>
+        {/* <div class="column"><div class="card"><p>Get daily computer programming trivia and test your knowledge</p></div></div> */}
+        <div class="column"><div class="card"><p>GET DAILY COMPUTER PROGRAMMING TRIVIA AND TEST YOUR KNOWLEDGE</p><img src="https://res.cloudinary.com/luismiller/image/upload/v1652996599/computer_vhjmdq.png" width="150" height="100"></img></div></div>
+      </div>
       </div>
       </div>
       <br></br>
-      <div>
+      {/* <div>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -81,18 +85,9 @@ const Home = () => {
             <td><i class="fa fa-check"></i></td>
           </tr>
         </table>
-      </div>
+      </div> */}
 
-         {/* <hr></hr>
-      <h3>Begin the journey of bettering yourself daily today!</h3>
-      <ul>
-        <li>Read the Bible daily and write down your takeaways</li>
-        <li>Get daily workouts or create your own</li>
-        <li>Get daily computer programming trivia and test your knowledge</li>
-      </ul>
-      <br></br> */}
-
-      <div>
+      <div class="video">
         <br></br>
         <h4>Hear Steve Job's take on Continuous Improvement below:</h4>
         <iframe width="560" height="315" 
