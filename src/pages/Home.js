@@ -23,7 +23,7 @@ const Home = () => {
       <hr></hr>
       <div class="row">
       <div className= "introSectionHeader">
-      <h2>Begin the journey of bettering yourself daily today!</h2>
+      {/* <h2>Begin the journey of bettering yourself daily today!</h2> */}
       </div>
       <div className="introSection">
       <br></br>
@@ -38,59 +38,12 @@ const Home = () => {
       </div>
       </div>
       <br></br>
-      {/* <div>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        ></link>
-        <table>
-          <tr>
-            <th>My Improvement</th>
-            <th>Sunday</th>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursday</th>
-            <th>Friday</th>
-            <th>Saturday</th>
-          </tr>
-          <tr>
-            <td>Workout</td>
-            <td><i class="fa fa-remove"></i></td>
-            <td><i class="fa fa-remove"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-remove"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-          </tr>
-          <tr>
-            <td>Read Bible</td>
-            <td><i class="fa fa-remove"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-remove"></i></td>
-          </tr>
-          <tr>
-            <td>Improve Coding</td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-          </tr>
-        </table>
-      </div> */}
+      {/* <h2>Begin the journey of bettering yourself daily today!</h2> */}
 
       <div class="video">
         <br></br>
         <h4>Hear Steve Job's take on Continuous Improvement below:</h4>
-        <iframe width="560" height="315" 
+        <iframe width="100%" height="800" 
           src="https://www.youtube.com/embed/Wc6bI16xuko"
           title="YouTube video player"
           frameborder="0"

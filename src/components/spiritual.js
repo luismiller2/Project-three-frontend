@@ -128,7 +128,7 @@ const Spiritual = () => {
         <p>{bibleSearch.Output}</p>
 
         <label>Takeaway: </label>
-        <input
+        <input  class="textbox"
           onChange={(e) => setUserTakeaway(e.target.value)}
           type="text"
           name="search"

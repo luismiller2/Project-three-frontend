@@ -66,7 +66,7 @@ const Workout = () => {
 
         {workouts.map(function (workout) {
           return (
-            <div>
+            <div class="allworkouts">
             <ul>
               <Link to={`/workouts/${workout.id}`}>
                <li> <h4>{workout.name}</h4> </li>

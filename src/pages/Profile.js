@@ -91,7 +91,6 @@ const Profile = () => {
         </Link>
     
       <button onClick={deleteProfile}>Delete Profile </button>
-      <hr></hr>
       </div>
 
       <br></br>
@@ -99,8 +98,7 @@ const Profile = () => {
       <div className="columnatedW">
       {workouts.map(function (workout) {
         return (
-          <div class="direction">
-          {/* <div class="columnW"><div class="cardW"> */}
+          <div class="box">
             <p>Name: {workout.name}</p>
             <p>Muscle Group: {workout.category}</p>
             <p>Description: {workout.description?.replace(/<[^>]*>/g, "")}</p>
@@ -111,7 +109,7 @@ const Profile = () => {
             <button onClick={() => deleteWorkout(workout._id)}>
               Delete Workout{" "}
             </button>
-            <hr></hr>
+            {/* <hr></hr> */}
           </div>
         );
       })}
@@ -122,8 +120,7 @@ const Profile = () => {
       <div className="columnatedT">
       {spirituals.map(function (spiritual) {
         return (
-          <div class="direction">
-          {/* <div class="columnT"><div class="cardT"> */}
+          <div class="box">
             <p>Book: {spiritual.book}</p>
             <p>Chapter: {spiritual.chapter}</p>
             <p>Verse From: {spiritual.verseFrom}</p>
@@ -135,8 +132,7 @@ const Profile = () => {
             <button onClick={() => deleteTakeaway(spiritual._id)}>
               Delete Takeaway{" "}
             </button>
-            <hr></hr>
-            {/* </div> */}
+            {/* <hr></hr> */}
           </div>
         );
       })}
